@@ -23,7 +23,7 @@ export async function fetchJobs( searchPrompt: string, location: string) {
   return result;
 };
 
-export async function fetchJobDetails( id: JobProps ) {
+export async function fetchJobDetails( id: string ) {
 
 
   const response = await fetch(`${baseUrl}/job-details?job_id=${id}`,
