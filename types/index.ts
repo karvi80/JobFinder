@@ -43,11 +43,11 @@ export type JobProps = {
 }
 
 export type EstimatedSalaryProps = {
-    searchEstimate: string;
+    searchEstimate?: string;
+    location?: string;
     response: {};
     data: [];
     request_id: string;
-    location: string;
     parameters: {
         job_title: string;
         location: string;
