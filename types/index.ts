@@ -1,6 +1,7 @@
 
 
-export type SearchProps = {
+
+export interface SearchProps {
     searchJob: [];
     value: string;
     searchPrompt: string;
@@ -11,7 +12,7 @@ export type SearchProps = {
     }
 
 }
-export type JobProps = {
+export interface JobProps {
     response: [],
     job: [],
     job_id: string,
@@ -42,17 +43,16 @@ export type JobProps = {
     job_is_remote: boolean;
 }
 
-export type EstimatedSalaryProps = {
+export interface EstimatedSalaryParamsProps {
     searchEstimate?: string;
-    location?: string;
-    response: {};
-    data: [];
-    request_id: string;
-    parameters: {
+    location?: string;   
+}
+export interface ParametersProps {
         job_title: string;
         location: string;
     };
-    average: {};
+
+    export interface EstimatedSalaryResponseProps {
     publisher_name: string;
     max_salary: number;
     min_salary: number;
@@ -60,7 +60,14 @@ export type EstimatedSalaryProps = {
     salary_currency: string;
     salary_period: string;
     publisher_link: string;
-    
+    }
+export interface EstimatedSalaryProps {
+    response: {};
+    data: EstimatedSalaryResponseProps[];
+    request_id: string;
+    parameters: ParametersProps,
+    average: {};
+     
 }
 
 export interface FormDataProps {

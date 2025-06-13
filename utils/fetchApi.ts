@@ -1,4 +1,4 @@
-import { SearchProps, JobProps, EstimatedSalaryProps } from "../types"
+import { SearchProps, JobProps, EstimatedSalaryProps, EstimatedSalaryParamsProps } from "../types"
 
 
 
@@ -38,7 +38,7 @@ export async function fetchJobDetails( id: string ) {
 }
 
 
-export async function fetchEstimatedSalary( {searchEstimate, location}: {searchEstimate: string; location: string} ) {
+export async function fetchEstimatedSalary( {searchEstimate, location}: EstimatedSalaryParamsProps ) {
 
   const response = await fetch(`${baseUrl}/estimated-salary?job_title=${searchEstimate}&location=${location}`,
   { headers: headers }

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { fetchEstimatedSalary } from "@/utils/fetchApi";
 
-import { EstimatedSalaryProps } from "@/types";
+import { EstimatedSalaryProps, EstimatedSalaryResponseProps } from "@/types";
 
 import millify from "millify";
 import Image from "next/image";
@@ -102,7 +102,7 @@ const EstimatedSalary: React.FC = () => {
                 per {response?.data[0].salary_period}
               </p>
               <div className="flex items-center justify-center gap-10 flex-wrap">
-                {response?.data?.map((average: EstimatedSalaryProps) => (
+                {response?.data?.map((average: EstimatedSalaryResponseProps) => (
                   <div key={average.publisher_name} className="price-info_card">
                     <div className="product-card">
                       <Link
